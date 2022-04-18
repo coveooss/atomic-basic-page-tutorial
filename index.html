@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script
+      type="module"
+      src="https://static.cloud.coveo.com/atomic/v1/atomic.esm.js"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://static.cloud.coveo.com/atomic/v1/themes/coveo.css"
+    />
+    <link
+      rel="stylesheet"
+      href="style.css"
+    />
+    <script>
+      (async () => {
+        await customElements.whenDefined("atomic-search-interface");
+        const searchInterface = document.querySelector("#search");
+
+        await searchInterface.initialize({
+          accessToken: "xx29e62e9b-f739-4886-b433-c9326cc1b492",
+          organizationId: "docsdemoslhkhaxyy",
+        });
+        searchInterface.executeFirstSearch();
+      })();
+    </script>
+  </head>
+  <body>
+    <atomic-search-interface id="search">
+      <atomic-search-layout>
+        <atomic-layout-section section="search">
+          <atomic-search-box></atomic-search-box>
+        </atomic-layout-section>
+        <atomic-layout-section section="facets">
+          <atomic-facet-manager>
+            <atomic-facet
+              field="source"
+              label="Source"
+            ></atomic-facet>
+            <atomic-facet
+              field="language"
+              label="Language"
+            ></atomic-facet>
+            <atomic-timeframe-facet
+              label="Timeframe"
+              with-date-picker="true"
+              is-collapsed="true"
+            >
+              <atomic-timeframe unit="hour"></atomic-timeframe>
+              <atomic-timeframe unit="day"></atomic-timeframe>
+              <atomic-timeframe unit="week"></atomic-timeframe>
+              <atomic-timeframe unit="month"></atomic-timeframe>
+              <atomic-timeframe unit="quarter"></atomic-timeframe>
+              <atomic-timeframe unit="year"></atomic-timeframe>
+            </atomic-timeframe-facet>
+          </atomic-facet-manager>
+        </atomic-layout-section>  
+        <atomic-layout-section section="main">
+          <atomic-layout-section section="status">
+            <atomic-refine-toggle></atomic-refine-toggle>
+          </atomic-layout-section>
+          <atomic-layout-section section="results">
+            <atomic-result-list
+              display="grid"
+              image-size="icon"
+              density="compact"
+              fields-to-include="ytlikecount,ytviewcount,ytthumbnailurl,ytviewrating" 
+            >
+              <atomic-result-template>
+                <template>
+                  <atomic-result-section-visual>
+                    <atomic-result-icon></atomic-result-icon>
+                  </atomic-result-section-visual>
+                  <atomic-result-section-badges>
+                    <atomic-result-badge
+                      field="language"
+                      icon="https://raw.githubusercontent.com/Rush/Font-Awesome-SVG-PNG/master/black/svg/language.svg"
+                    ></atomic-result-badge>
+                    <atomic-field-condition must-match-sourcetype="YouTube">
+                      <atomic-result-badge
+                        label="YouTube"
+                      ></atomic-result-badge>
+                    </atomic-field-condition>
+                  </atomic-result-section-badges>
+
+                  <!-- ** Add the code from the Title Metadata Result Section here ** -->
+
+                  <!-- ** Add the code from the Bottom Metadata Result Section here ** -->
+                  
+                  <atomic-result-section-title>
+                    <atomic-result-link target="_blank"></atomic-result-link>
+                  </atomic-result-section-title>
+                  <atomic-result-section-excerpt>
+                    <atomic-result-text field="excerpt"></atomic-result-text>
+                  </atomic-result-section-excerpt>
+                </template>
+              </atomic-result-template>
+            </atomic-result-list>
+          </atomic-layout-section>
+          <atomic-layout-section section="pagination">
+            <atomic-load-more-results></atomic-load-more-results>
+          </atomic-layout-section>
+        </atomic-layout-section>
+      </atomic-search-layout>
+    </atomic-search-interface>
+  </body>
+</html>
