@@ -1,0 +1,1 @@
+This project serves as a starting point for the [Coveo Atomic Tutorial](https://levelup.coveo.com/learn/courses/atomic/).
