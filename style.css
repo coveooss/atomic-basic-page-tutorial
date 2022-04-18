@@ -1,0 +1,20 @@
+atomic-color-facet::part(value-YouTubeVideo) {
+  background-image: url("https://cdn.cdnlogo.com/logos/y/92/youtube.svg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+atomic-color-facet::part(value-twitter2tweet) {
+  background-image: url("https://cdn.cdnlogo.com/logos/t/96/twitter-icon.svg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+atomic-color-facet::part(value-rssitem) {
+  background-image: url("https://cdn.cdnlogo.com/logos/r/89/rss.svg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
