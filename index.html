@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script
+      type="module"
+      src="https://static.cloud.coveo.com/atomic/v1/atomic.esm.js"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://static.cloud.coveo.com/atomic/v1/themes/coveo.css"
+    />
+    <link
+      rel="stylesheet"
+      href="style.css"
+    />
+    <script>
+      (async () => {
+        await customElements.whenDefined("atomic-search-interface");
+        const searchInterface = document.querySelector("#search");
+
+        await searchInterface.initialize({
+          accessToken: "xx29e62e9b-f739-4886-b433-c9326cc1b492",
+          organizationId: "docsdemoslhkhaxyy",
+        });
+        searchInterface.executeFirstSearch();
+      })();
+    </script>
+  </head>
+  <body>
+    <atomic-search-interface id="search">
+      <atomic-search-layout>
+        <atomic-layout-section section="search">
+          <atomic-search-box></atomic-search-box>
+        </atomic-layout-section>
+        <atomic-layout-section section="facets">
+          <atomic-facet-manager>
+            <atomic-facet
+              field="source"
+              label="Source"
+            ></atomic-facet>
+            <atomic-facet
+              field="language"
+              label="Language"
+            ></atomic-facet>
+            <atomic-timeframe-facet
+              label="Timeframe"
+              with-date-picker="true"
+              is-collapsed="true"
+            >
+              <atomic-timeframe unit="hour"></atomic-timeframe>
+              <atomic-timeframe unit="day"></atomic-timeframe>
+              <atomic-timeframe unit="week"></atomic-timeframe>
+              <atomic-timeframe unit="month"></atomic-timeframe>
+              <atomic-timeframe unit="quarter"></atomic-timeframe>
+              <atomic-timeframe unit="year"></atomic-timeframe>
+            </atomic-timeframe-facet>
+          </atomic-facet-manager>
+        </atomic-layout-section>  
+        <atomic-layout-section section="main">
+          <atomic-layout-section section="results">
+            <atomic-result-list></atomic-result-list>
+          </atomic-layout-section>
+          <atomic-layout-section section="pagination">
+            <atomic-load-more-results></atomic-load-more-results>
+          </atomic-layout-section>
+        </atomic-layout-section>
+      </atomic-search-layout>
+    </atomic-search-interface>
+  </body>
+</html>
