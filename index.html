@@ -27,7 +27,10 @@
     </script>
   </head>
   <body>
-    <atomic-search-interface id="search">
+    <atomic-search-interface id="search" fields-to-include="ytlikecount,
+                                                            ytviewcount,
+                                                            ytthumbnailurl,
+                                                            ytviewrating">
       <atomic-search-layout>
         <atomic-layout-section section="search">
           <atomic-search-box></atomic-search-box>
@@ -109,7 +112,6 @@
           </atomic-layout-section>
           <atomic-layout-section section="results">
             <atomic-result-list
-              fields-to-include="ytlikecount,ytviewcount,ytthumbnailurl,ytviewrating"
               display="grid"
               image-size="large"
             >
