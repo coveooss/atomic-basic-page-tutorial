@@ -3,11 +3,11 @@
   <head>
     <script
       type="module"
-      src="https://static.cloud.coveo.com/atomic/v1/atomic.esm.js"
+      src="https://staticdev.cloud.coveo.com/atomic/v2/atomic.esm.js"
     ></script>
     <link
       rel="stylesheet"
-      href="https://static.cloud.coveo.com/atomic/v1/themes/coveo.css"
+      href="https://staticdev.cloud.coveo.com/atomic/v2/themes/coveo.css"
     />
     <link
       rel="stylesheet"
@@ -27,10 +27,10 @@
     </script>
   </head>
   <body>
-    <atomic-search-interface id="search" fields-to-include="ytlikecount,
-                                                            ytviewcount,
-                                                            ytthumbnailurl,
-                                                            ytviewrating">
+    <atomic-search-interface id="search" fields-to-include='["ytlikecount",
+                                                            "ytviewcount",
+                                                            "ytthumbnailurl",
+                                                            "ytviewrating"]'>
       <atomic-search-layout>
         <atomic-layout-section section="search">
           <atomic-search-box></atomic-search-box>
