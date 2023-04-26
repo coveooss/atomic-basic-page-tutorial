@@ -21,6 +21,7 @@
         await searchInterface.initialize({
           accessToken: "xx29e62e9b-f739-4886-b433-c9326cc1b492",
           organizationId: "docsdemoslhkhaxyy",
+          organizationEndpoints: await searchInterface.getOrganizationEndpoints("docsdemoslhkhaxyy"),
         });
         searchInterface.executeFirstSearch();
       })();
