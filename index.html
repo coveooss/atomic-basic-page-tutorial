@@ -3,11 +3,11 @@
   <head>
     <script
       type="module"
-      src="https://static.cloud.coveo.com/atomic/v2/atomic.esm.js"
+      src="https://static.cloud.coveo.com/atomic/v3/atomic.esm.js"
     ></script>
     <link
       rel="stylesheet"
-      href="https://static.cloud.coveo.com/atomic/v2/themes/coveo.css"
+      href="https://static.cloud.coveo.com/atomic/v3/themes/coveo.css"
     />
     <link
       rel="stylesheet"
@@ -21,7 +21,6 @@
         await searchInterface.initialize({
           accessToken: "xx29e62e9b-f739-4886-b433-c9326cc1b492",
           organizationId: "docsdemoslhkhaxyy",
-          organizationEndpoints: await searchInterface.getOrganizationEndpoints("docsdemoslhkhaxyy"),
         });
         searchInterface.executeFirstSearch();
       })();
