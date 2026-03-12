@@ -1,0 +1,12 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: atomic-basic-page-tutorial
+
+  annotations:
+    github.com/project-slug: coveooss/atomic-basic-page-tutorial
+
+spec:
+  type: website
+  lifecycle: experimental
+  owner: dev-docs
